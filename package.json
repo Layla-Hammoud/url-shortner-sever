@@ -1,0 +1,33 @@
+{
+  "name": "url-shortner-sever",
+  "version": "1.0.0",
+  "description": "A simple URL shortening service built with Node.js, Express, and Sequelize.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Layla-Hammoud/url-shortner-sever.git"
+  },
+  "author": "Layla Hammoud <laylahammoud63@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Layla-Hammoud/url-shortner-sever/issues"
+  },
+  "homepage": "https://github.com/Layla-Hammoud/url-shortner-sever#readme",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.9.7",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.0"
+  }
+}
