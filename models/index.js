@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize";
 import "dotenv/config.js";
+import ShortenedURL from "./ShortenedURL.js"
 
 const sequelize = new Sequelize({
     dialect: 'mysql',
@@ -8,6 +9,19 @@ const sequelize = new Sequelize({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE
 })
+
+const ShortenedURLModel = ShortenedURL(sequelize, Sequelize)
+
+async function syncDatabase() {
+    try {
+        await sequelize.sync({ alter: true });
+        console.log('Model synchronized successfully');
+    } catch (error) {
+        console.error('Unable to synchronize models with the database:', error);
+    }
+}
+
+syncDatabase();
 
 const testConnection = async () => {
     try {
@@ -18,9 +32,4 @@ const testConnection = async () => {
     }
 }
 
-const db = {
-    sequelize,
-    testConnection
-}
-
-export default db
+export { sequelize, testConnection };
